@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { spawn } = require('child_process');
 
 const authstr = `'if \
@@ -7,12 +9,15 @@ const authstr = `'if \
 fi; \
 exit 1;'`;
 
-var prores = spawn('zproxy', ['--authenticate', authstr])
+var prores = spawn('zproxy', [
+        '--authenticate', authstr, 
+            '--local-address', '0.0.0.0'])
 
 prores.stdout.on('data', (data) => {
 
     if (data.toString().includes('HTTP(s) proxy')) {
         console.log('\n    😊 ', data.toString())
+        console.log('   auth -', process.env.USER, process.env.PASS)
     } else {
         console.log('  ', data.toString())
     }
