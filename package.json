@@ -4,7 +4,8 @@
   "description": "A server to get and control my children's location.",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 -f start index.js"
+    "start": "node index.js",
+    "start.pm2": "pm2 -f start index.js"
   },
   "author": "",
   "license": "ISC",
