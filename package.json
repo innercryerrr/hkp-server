@@ -1,0 +1,19 @@
+{
+  "name": "hkp-server",
+  "version": "1.0.0",
+  "description": "A server to get and control my children's location.",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 -f start index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "5.2.0",
+    "zproxy": "github:innercryerrr/zproxy"
+  },
+  "engines": {
+    "node": "v17.9.0",
+    "npm": "8.13.2"
+  }
+}
