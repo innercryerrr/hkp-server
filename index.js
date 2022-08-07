@@ -10,8 +10,9 @@ fi; \
 exit 1;'`;
 
 var prores = spawn('zproxy', [
-        '--authenticate', authstr, 
-            '--local-address', '0.0.0.0'])
+        '--port', process.env.PORT,
+            '--authenticate', authstr, 
+                '--local-address', '0.0.0.0'])
 
 prores.stdout.on('data', (data) => {
 
