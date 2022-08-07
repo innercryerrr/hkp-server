@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 
 const authstr = `'if \
 [ "$PROXY_AUTH_USERNAME" = "${process.env.USER}" ] && \
-[ "$PROXY_AUTH_PASSWORD" = "${process.env.PORT}" ]; \
+[ "$PROXY_AUTH_PASSWORD" = "${process.env.PASS}" ]; \
   then exit 0; \
 fi; \
 exit 1;'`;
